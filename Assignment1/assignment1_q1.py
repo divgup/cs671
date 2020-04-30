@@ -45,7 +45,7 @@ for i in length:
                         #writer.writerow([str(itr),str(iname)])
                     im.save("data1/"+iname)
 
-def makeVideo(folder,outputVideoname):  
+def makeVideo(outputVideoname):  
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
     outputVideo = cv2.VideoWriter(outputVideoname,fourcc,2,(84,84))
 
@@ -67,15 +67,15 @@ def makeVideo(folder,outputVideoname):
                         label = 1
                     for r in range(0,10):
                         frame = Image.new('RGB',(84,84)) 
-                        iname1 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9)+".jpg"
-                        iname2 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+1)+".jpg"
-                        iname3 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+2)+".jpg"
-                        iname4 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+3)+".jpg"
-                        iname5 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+4)+".jpg"
-                        iname6 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+5)+".jpg"
-                        iname7 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+6)+".jpg"
-                        iname8 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+7)+".jpg"                        
-                        iname9 = str(label1)+""+str(label2)+""+str(k)+""+str(label)+""+str(r*9+8)+".jpg"
+                        iname1 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+1)+".jpg"
+                        iname2 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+2)+".jpg"
+                        iname3 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+3)+".jpg"
+                        iname4 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+4)+".jpg"
+                        iname5 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+5)+".jpg"
+                        iname6 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+6)+".jpg"
+                        iname7 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+7)+".jpg"
+                        iname8 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+8)+".jpg"                        
+                        iname9 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+9)+".jpg"
                         frame.paste(Image.open("data1/"+iname1),(0,0,28,28))
                         frame.paste(Image.open("data1/"+iname2), (28,0,56,28))
                         frame.paste(Image.open("data1/"+iname3), (56,0,84,28))
@@ -89,5 +89,4 @@ def makeVideo(folder,outputVideoname):
                         frame = cv2.cvtColor(np.asarray(frame,dtype=np.uint8),cv2.COLOR_BGR2RGB)
                         outputVideo.write(frame)
     outputVideo.release()  
-
-makeVideo(folder,"ass1_q1.mp4")                  
+makeVideo("ass1_q1.mp4")                  

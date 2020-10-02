@@ -87,6 +87,6 @@ def makeVideo(outputVideoname):
                         frame.paste(Image.open("data1/"+iname9), (56,56,84,84))
 
                         frame = cv2.cvtColor(np.asarray(frame,dtype=np.uint8),cv2.COLOR_BGR2RGB)
-                        outputVideo.write(frame)
+#                         outputVideo.write(frame)
     outputVideo.release()  
 makeVideo("ass1_q1.mp4")                  

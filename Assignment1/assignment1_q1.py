@@ -61,8 +61,6 @@ def makeVideo(outputVideoname):
                  for c in color:
                     if(c==(255,0,0)):
                         label = 0
-                    else:
-                        label = 1
                     for r in range(0,10):
                         frame = Image.new('RGB',(84,84)) 
                         iname1 = str(label1)+"_"+str(label2)+"_"+str(k)+"_"+str(label)+""+str(r*9+1)+".jpg"

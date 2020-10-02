@@ -26,8 +26,6 @@ for i in length:
             for c in color:
                 if(c==(255,0,0)):
                     label = 0
-                else:
-                    label = 1
                 for r in range(1000):
                     im1 = np.zeros((28,28,3),dtype='int')
                     im = Image.fromarray(im1,'RGB')
